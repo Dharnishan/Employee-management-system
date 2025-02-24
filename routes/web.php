@@ -41,5 +41,5 @@ Route::get('/article/technology/dharnish-100',function(){
  
 //Employee Routes
 Route::get('/employees',[EmployeeController::class,'index']);
-Route::get('/employees/create',[EmployeeController::class,'create']);
-Route::get('employees/store',[EmployeeController::class,'store']);
+Route::get('/employees/create',[EmployeeController::class,'create'])->name('employee.create');
+Route::post('/employees/store',[EmployeeController::class,'store'])->name('employees.store');

@@ -4,7 +4,8 @@
         <div class="card mt-3">
             <div class="card-body">
                 <p style="font-size:20px; font-weight:bold;">Create New Employee</p>
-                <form action="#" class="was-validated" method="POST" novalidate>
+                <form action="{{route('employees.store')}}" class="was-validated" method="POST" novalidate>
+                    @csrf
                     <div class="form-group has-validation">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" required>
@@ -22,7 +23,7 @@
                         <input type="date" name="joining_date" id="joining_date" class="form-control" required>
                     </div>
                     <div class="form-group has-validation">
-                        <label for="joining_salary">Joining salary</label>
+                        <label for="joining_salary">salary</label>
                         <input type="number" name="salary" id="joining_salary" class="form-control" required>
                     </div>
                     <div class="form-group has-validation">
