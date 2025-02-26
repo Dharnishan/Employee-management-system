@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -29,6 +30,16 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {  
         $data = $request->except('_token');
+        //Employee::create($data);
+        $employee = new Employee;
+        $employee ->name = $data['name'];
+        $employee ->email = $data['email'];
+        $employee ->joining_date = $data['joining_date'];
+        $employee ->salary = $data['salary'];
+        $employee ->phone = $data['phone'];
+        $employee ->is_active = $data['is_active'];
+        $employee ->save();
+        dd('successfully created');
     }
 
     /**
